@@ -1,0 +1,11 @@
+version: "3"
+services:
+  scanner:
+    image: securecompliance/openvas
+    container_name: scanner
+    volumes:
+      - ./storage/openvas-plugins:/var/lib/openvas/plugins
+    environment:
+      - MASTER_ADDRESS=35.192.109.200
+      - MASTER_PORT=2222
+    restart: unless-stopped
